@@ -1,6 +1,11 @@
-export default (text = 'Hello world me22') => {
-  const element = document.createElement('div');
+import React from 'react';
 
-  element.innerHTML = text;
-  return element;
-};
+export default class Component extends React.Component{
+  render() {
+    return(
+      <div className="container">
+        <span>HELLO WORLD</span>
+      </div>
+    );
+  }
+}
