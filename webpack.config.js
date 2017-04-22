@@ -13,6 +13,7 @@ const PATHS = {
 const FILE_MATCHERS = {
   JS: /\.jsx?$/,
   CSS: /\.css$/,
+  FONTS: /\.(eot|svg|ttf|woff|woff2)$/
 };
 
 const commonConfig = (env) => {
@@ -32,6 +33,11 @@ const commonConfig = (env) => {
       }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery'
+      })
     ],
     resolve: {
       extensions: ['.js', '.jsx'],
@@ -56,6 +62,17 @@ const commonConfig = (env) => {
             // I.e., { cacheDirectory: '<path>' }
             cacheDirectory: true,
           },
+        },
+        {
+          test: FILE_MATCHERS.CSS,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
+        },
+        {
+          test: FILE_MATCHERS.FONTS,
+          loader: 'file-loader',
         }
       ],
     },

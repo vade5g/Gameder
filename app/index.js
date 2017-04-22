@@ -1,24 +1,24 @@
 require('react-hot-loader/patch');
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Component from './component';
+import MainView from './MainView';
 import { AppContainer } from 'react-hot-loader';
+import 'bootstrap/dist/css/bootstrap.css';
 
-console.log(document);
 const app = document.createElement('div');
 document.body.appendChild(app);
 
 const render = () => {
   ReactDOM.render(
     <AppContainer>
-      <Component />
+      <MainView />
     </AppContainer>,
     app
   );
 };
 
-render(Component);
+render(MainView);
 
 if (module.hot) {
-  module.hot.accept('./component', () => render(Component));
+  module.hot.accept('./MainView', () => render(MainView));
 }
