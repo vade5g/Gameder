@@ -30,6 +30,7 @@ const commonConfig = (env) => {
     plugins: [
       new HtmlWebpackPlugin({
         title: 'Webpack demo',
+        template: 'common/index.ejs'
       }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),

@@ -1,23 +1,12 @@
 import React from 'react';
 
 import Button from './components/Button';
-
-class Input extends React.Component{
-  render() {
-    return(
-      <input type="text"/>
-    );
-  }
-}
+import Header from './components/Header';
 
 const pages = [
   {
     title: 'Discovery',
     component: Button,
-  },
-  {
-    title: 'Matches',
-    component: Input,
   },
   {
     title: 'Settings',
@@ -70,12 +59,15 @@ export default class MainView extends React.Component{
     const Page = this.renderPage();
 
     return(
-      <div className="container">
-        <ul className="nav nav-tabs">
-          {this.renderTabs()}
-        </ul>
-        <div className="tab-content">
-          <Page style="primary">Hiii</Page>
+      <div>
+        <Header />
+        <div className="container">
+          <ul className="nav nav-tabs nav-justified">
+            {this.renderTabs()}
+          </ul>
+          <div className="tab-content">
+            <Page style="primary">Hiii</Page>
+          </div>
         </div>
       </div>
     );
