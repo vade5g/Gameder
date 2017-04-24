@@ -75,7 +75,7 @@ export default class MainView extends React.Component{
           {this.renderTabs()}
         </ul>
         <div className="tab-content">
-          <Page style="primary">Test</Page>
+          <Page style="primary">Hiii</Page>
         </div>
       </div>
     );
