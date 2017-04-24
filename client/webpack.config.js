@@ -99,7 +99,7 @@ const developmentConfig = (env) => {
       // 0.0.0.0 is available to all network devices
       // unlike default `localhost`.
       host: process.env.HOST, // Defaults to `localhost`
-      port: process.env.PORT, // Defaults to 8080
+      port: 9090, // Defaults to 8080
       overlay: {
         errors: true,
         warnings: true,
