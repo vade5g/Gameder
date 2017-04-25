@@ -108,19 +108,19 @@ const developmentConfig = (env) => {
     },
     module: {
       rules: [
-        {
-          test: FILE_MATCHERS.JS,
-          enforce: 'pre',
-
-          loader: 'eslint-loader',
-          options: {
-            emitWarning: true,
-          },
-          exclude: [
-            PATHS.build,
-            path.join(ROOT, 'node_modules')
-          ]
-        },
+        // {
+        //   test: FILE_MATCHERS.JS,
+        //   enforce: 'pre',
+        //
+        //   loader: 'eslint-loader',
+        //   options: {
+        //     emitWarning: true,
+        //   },
+        //   exclude: [
+        //     PATHS.build,
+        //     path.join(ROOT, 'node_modules')
+        //   ]
+        // },
       ]
     }
   };

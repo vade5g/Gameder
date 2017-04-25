@@ -2,6 +2,7 @@ import React from 'react';
 
 import Button from './components/Button';
 import Header from './components/Header';
+import TextInput from './components/TextInput';
 
 const pages = [
   {
@@ -9,8 +10,12 @@ const pages = [
     component: Button,
   },
   {
+    title: 'Matches',
+    component: TextInput,
+  },
+  {
     title: 'Settings',
-    component: Button,
+    component: TextInput,
   },
 ];
 
@@ -60,13 +65,14 @@ export default class MainView extends React.Component{
 
     return(
       <div>
-        <Header />
+        <Header user={this.user}/>
         <div className="container">
           <ul className="nav nav-tabs nav-justified">
             {this.renderTabs()}
           </ul>
           <div className="tab-content">
-            <Page style="primary">Hiii</Page>
+
+            <Page value='mamku ebal'/>
           </div>
         </div>
       </div>
