@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/js/bootstrap.min';
-import moment from 'moment/moment.js'
+
 
 const app = document.createElement('div');
 document.body.appendChild(app);

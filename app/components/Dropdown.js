@@ -23,16 +23,16 @@ export default class Dropdown extends Component{
     for(let li of this.props.options){
       if(this.props.type=='select'){
         onclick=(this.changeTitle);
-        list.push(<li onClick={onclick}><a href="#">{li}</a></li>)
+        list.push(<li onClick={onclick} ><a href="#">{li}</a></li>)
       }else if(this.props.type=='checkboxes'){
         list.push(<li><a href='#'>
           <div class="checkbox">
-            <label><input type="checkbox" className="checkbox-list"value=""/>{li}</label>
+            <label><input type="checkbox" className="checkbox-list "value=""/>{li}</label>
           </div>
         </a></li>)
       }else{
         onclick=undefined;
-        list.push(<li onClick={onclick}><a href="#">{li}</a></li>)
+        list.push(<li onClick={onclick} ><a href="#">{li}</a></li>)
       }
 
     }
@@ -43,7 +43,7 @@ export default class Dropdown extends Component{
     const className=this.props.className;
     return(
       <div className="dropdown">
-        <button className="data-toggle btn" className={`${className}`}  type="button" data-toggle="dropdown">{this.state.title}
+        <button className={`${className} data-toggle btn btn-default`}  type="button" data-toggle="dropdown">{this.state.title}
           <span className="caret"></span>
         </button>
         <ul className="dropdown-menu">
