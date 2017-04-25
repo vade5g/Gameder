@@ -26,10 +26,10 @@ export default class Dropdown extends Component{
 
   }
   render(){
-
+    const className=this.props.className;
     return(
       <div className="dropdown">
-        <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{this.state.title}
+        <button className="data-toggle btn" className={`${className}`}  type="button" data-toggle="dropdown">{this.state.title}
           <span className="caret"></span>
         </button>
         <ul className="dropdown-menu">
@@ -41,6 +41,7 @@ export default class Dropdown extends Component{
 }
 
 Dropdown.propTypes={
+  className:PropTypes.string,
   title:PropTypes.string,
   type:PropTypes.string,
   options:PropTypes.array
