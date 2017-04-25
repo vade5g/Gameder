@@ -4,24 +4,44 @@ import Button from './Button';
 
 export default class Dropdown extends Component{
 
-  getInitialState(){
-    return {selectValue:'Gender'};
+  constructor(props) {
+    super(props);
+
+    this.changeTitle = this.changeTitle.bind(this);
+
+    this.state = {
+      title: props.title,
+    }
   }
-  changeValue(ev){
-    this.setState({selectValue:ev.target.value});
+  changeTitle(ev){
+    this.setState({title:ev.target.text});
+  }
+  getSelect(){
+    const list = [];
+    let onclick = this.props.type =="select"? (this.changeTitle) : undefined;
+    for(let li of this.props.options){
+        list.push(<li onClick={onclick}><a href="#">{li}</a></li>)
+    }
+    return list;
+
   }
   render(){
+
     return(
       <div className="dropdown">
-        <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{this.state.selectValue}
+        <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{this.state.title}
           <span className="caret"></span>
         </button>
         <ul className="dropdown-menu">
-          <li><a href="#">HTML</a></li>
-          <li><a href="#">CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
+          {this.getSelect()}
         </ul>
       </div>
     );
   }
+}
+
+Dropdown.propTypes={
+  title:PropTypes.string,
+  type:PropTypes.string,
+  options:PropTypes.array
 }

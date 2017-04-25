@@ -74,7 +74,7 @@ export default class MainView extends React.Component{
           </ul>
           <div className="tab-content">
 
-            <Page value='mamku ebal' label="smt"/>
+            <Page value='mamku ebal' type = 'select' label="smt" title="Gender" options={['Female','Male','undefined']}/>
           </div>
         </div>
       </div>
