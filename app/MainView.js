@@ -3,11 +3,13 @@ import React from 'react';
 import Button from './components/Button';
 import Header from './components/Header';
 import TextInput from './components/TextInput';
+import Settings from './components/Settings';
+import Dropdown from './components/Dropdown';
 
 const pages = [
   {
     title: 'Discovery',
-    component: Button,
+    component: Dropdown,
   },
   {
     title: 'Matches',
@@ -15,7 +17,7 @@ const pages = [
   },
   {
     title: 'Settings',
-    component: TextInput,
+    component: Settings,
   },
 ];
 
@@ -65,14 +67,14 @@ export default class MainView extends React.Component{
 
     return(
       <div>
-        <Header user={this.user}/>
+        <Header/>
         <div className="container">
-          <ul className="nav nav-tabs nav-justified">
+          <ul className="nav nav-tabs nav-justified tabs">
             {this.renderTabs()}
           </ul>
           <div className="tab-content">
 
-            <Page value='mamku ebal'/>
+            <Page value='mamku ebal' label="smt"/>
           </div>
         </div>
       </div>
