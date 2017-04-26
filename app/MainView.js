@@ -9,7 +9,7 @@ import Dropdown from './components/Dropdown';
 const pages = [
   {
     title: 'Discovery',
-    component: Dropdown,
+    component: TextInput,
   },
   {
     title: 'Matches',
@@ -73,8 +73,7 @@ export default class MainView extends React.Component{
             {this.renderTabs()}
           </ul>
           <div className="tab-content">
-
-            <Page value='mamku ebal' type = 'select' label="smt" title="Gender" options={['Female','Male','undefined']}/>
+            <Page/>
           </div>
         </div>
       </div>

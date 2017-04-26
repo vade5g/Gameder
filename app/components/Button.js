@@ -12,6 +12,11 @@ const BUTTON_STYLES = {
 };
 
 export default class Button extends Component{
+  constructor(props){
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
   getStyle(){
     const style = this.props.style;
 
@@ -19,13 +24,19 @@ export default class Button extends Component{
       return `btn ${BUTTON_STYLES[style]}`;
   }
 
+  onClick(ev) {
+    //do your logic here
+    this.props.onClick(ev);
+  }
+
   render(){
     const props = this.props;
     return(
-      <button className={`${props.className} ${this.getStyle()}`}>{props.children}</button>
+      <button className={`${props.className} ${this.getStyle()}`} onClick={this.onClick}>{props.children}</button>
     );
   }
 }
+
 Button.defaultProps = {
   style: 'default',
   className: '',
@@ -43,5 +54,5 @@ Button.propTypes = {
   onHover: PropTypes.func,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
-  
+
 };

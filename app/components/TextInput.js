@@ -26,14 +26,20 @@ export default class TextInput extends Component{
       placeholder,
       label,
     } = this.props;
-
-    let labelTag = label ? (<label className='control-label'>{label}</label>) : undefined;
-    return(
-      <div>
-        {labelTag}
-        <input type="text" className={className} value={this.state.value} onChange={this.onInputChange} placeholder={placeholder}/>
-      </div>
+    const input = (
+      <input type="text" className={className} value={this.state.value} onChange={this.onInputChange} placeholder={placeholder}/>
     );
+
+    if(label)
+      return(
+        <div>
+          <label className='control-label'>{label}</label>
+          {input}
+        </div>
+      );
+    else{
+      return input;
+    }
   }
 }
 

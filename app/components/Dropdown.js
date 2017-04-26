@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 export default class Dropdown extends Component{
-
   constructor(props) {
     super(props);
 
@@ -13,26 +12,28 @@ export default class Dropdown extends Component{
       title: props.title,
     }
   }
+
   changeTitle(ev){
     this.setState({title:ev.target.text});
   }
-  getSelect(){
+
+  renderOptions(){
     const list = [];
     let onclick;
 
     for(let li of this.props.options){
       if(this.props.type=='select'){
-        onclick=(this.changeTitle);
-        list.push(<li onClick={onclick} ><a href="#">{li}</a></li>)
+        onclick = this.changeTitle;
+        list.push(<li key={li} onClick={onclick}><a href="#">{li}</a></li>)
       }else if(this.props.type=='checkboxes'){
-        list.push(<li><a href='#'>
-          <div class="checkbox">
-            <label><input type="checkbox" className="checkbox-list "value=""/>{li}</label>
+        list.push(<li key={li}><a href='#'>
+          <div className="checkbox">
+            <label><input type="checkbox" className="checkbox-list" value=""/>{li}</label>
           </div>
         </a></li>)
       }else{
         onclick=undefined;
-        list.push(<li onClick={onclick} ><a href="#">{li}</a></li>)
+        list.push(<li key={li} onClick={onclick}><a href="#">{li}</a></li>)
       }
 
     }
@@ -40,14 +41,18 @@ export default class Dropdown extends Component{
 
   }
   render(){
-    const className=this.props.className;
+    const {
+      className,
+    } = this.props;
+
     return(
       <div className="dropdown">
-        <button className={`${className} data-toggle btn btn-default`}  type="button" data-toggle="dropdown">{this.state.title}
+        <button className="data-toggle btn btn-default"  type="button" data-toggle="dropdown">
+          {this.state.title}
           <span className="caret"></span>
         </button>
         <ul className="dropdown-menu">
-          {this.getSelect()}
+          {this.renderOptions()}
         </ul>
       </div>
     );
