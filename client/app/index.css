@@ -1,0 +1,26 @@
+.center {
+  text-align: center;
+}
+
+.btn-circle {
+  margin-top: 7px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 14px;
+}
+/*.tabs{*/
+  /*margin-bottom: 15px;*/
+/*}*/
+label{
+  margin-top: 15px;
+}
+.checkbox-list{
+  margin-right: 6px!important ;
+}
+form{
+  margin-bottom: 20px;
+}

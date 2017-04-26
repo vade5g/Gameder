@@ -4,6 +4,10 @@ import ReactDOM from 'react-dom';
 import MainView from './MainView';
 import { AppContainer } from 'react-hot-loader';
 import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
+import 'font-awesome/css/font-awesome.css';
+import 'bootstrap/dist/js/bootstrap.min';
+
 
 const app = document.createElement('div');
 document.body.appendChild(app);

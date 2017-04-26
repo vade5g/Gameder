@@ -30,6 +30,7 @@ const commonConfig = (env) => {
     plugins: [
       new HtmlWebpackPlugin({
         title: 'Webpack demo',
+        template: 'common/index.ejs'
       }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
@@ -99,7 +100,7 @@ const developmentConfig = (env) => {
       // 0.0.0.0 is available to all network devices
       // unlike default `localhost`.
       host: process.env.HOST, // Defaults to `localhost`
-      port: 9090, // Defaults to 8080
+      port: process.env.PORT, // Defaults to 8080
       overlay: {
         errors: true,
         warnings: true,
@@ -107,19 +108,19 @@ const developmentConfig = (env) => {
     },
     module: {
       rules: [
-        {
-          test: FILE_MATCHERS.JS,
-          enforce: 'pre',
-
-          loader: 'eslint-loader',
-          options: {
-            emitWarning: true,
-          },
-          exclude: [
-            PATHS.build,
-            path.join(ROOT, 'node_modules')
-          ]
-        },
+        // {
+        //   test: FILE_MATCHERS.JS,
+        //   enforce: 'pre',
+        //
+        //   loader: 'eslint-loader',
+        //   options: {
+        //     emitWarning: true,
+        //   },
+        //   exclude: [
+        //     PATHS.build,
+        //     path.join(ROOT, 'node_modules')
+        //   ]
+        // },
       ]
     }
   };
