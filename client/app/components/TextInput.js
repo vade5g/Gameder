@@ -57,5 +57,5 @@ TextInput.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   label: PropTypes.string,
-  type:PropTypes.date
+  //type: PropTypes.date
 };

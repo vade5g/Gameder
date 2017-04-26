@@ -4,44 +4,18 @@ import TextInput from './TextInput';
 import Button from './Button';
 import Dropdown from './Dropdown';
 import TimeInput from './TimeInput';
-import InputPlusButton from './InputPlusButton';
+import ListGroupWithInput from './ListGroup/ListGroupWithInput';
+
+const values = {
+  languages: [
+    'English',
+  ],
+  games: [
+    'CS:GO',
+  ],
+};
 
 export default class Settings extends Component {
-
-  constructor(props){
-    super(props);
-
-    this.addLanguageButtonClick = this.addLanguageButtonClick.bind(this);
-  }
-
-
-
-  renderLanguages() {
-    const languages = [];
-    for(let language of this.props.languages) {
-      languages.push(
-        <li className='list-group-item'>
-          {language}
-          <a href="#" className="pull-right">
-        	 <i className="fa fa-times"></i>
-          </a>
-        </li>
-      );
-    }
-    return languages;
-  }
-
-  addLanguageButtonClick(ev) {
-    const value = this.languageInput.state.value;
-    if(!value)
-      return;
-    this.props.languages.push(
-      value
-    );
-    this.languageInput.state.value = '';
-    this.forceUpdate();
-  }
-
   render() {
     return (
       <form className="row">
@@ -60,8 +34,8 @@ export default class Settings extends Component {
         <div className="col-md-6">
           <h3>Discovery settings</h3>
           <hr/>
-            <InputPlusButton example="English" label="Languages"/>
-            <InputPlusButton example="CS:GO" label="Games"/>
+            <ListGroupWithInput label="Languages" placeholder="New language" id="languagesList" items={values.languages}/>
+            <ListGroupWithInput example="CS:GO" label="Games" placeholder="New game" id="gamesList" items={values.games}/>
           <div className="form-group">
             <label>Who are you looking for ?</label>
             <Dropdown type='select' title='Gender' options={['Female','Male','undefined']}/>
@@ -79,14 +53,4 @@ export default class Settings extends Component {
       </form>
     );
   }
-}
-
-Settings.defaultProps = {
-  languages: [
-    'English',
-  ],
-  games: [
-    'CS:GO',
-    'DOTA',
-  ],
 }
