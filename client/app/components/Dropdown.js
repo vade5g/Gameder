@@ -49,7 +49,7 @@ export default class Dropdown extends Component{
       <div className="dropdown">
         <button className="data-toggle btn btn-default"  type="button" data-toggle="dropdown">
           {this.state.title}
-          <span className="caret"></span>
+            <span className="caret"></span>
         </button>
         <ul className="dropdown-menu">
           {this.renderOptions()}

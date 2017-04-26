@@ -4,6 +4,7 @@ import TextInput from './TextInput';
 import Button from './Button';
 import Dropdown from './Dropdown';
 import TimeInput from './TimeInput';
+import InputPlusButton from './InputPlusButton';
 
 export default class Settings extends Component {
 
@@ -47,29 +48,20 @@ export default class Settings extends Component {
         <div className="col-md-6">
           <h3>Personal</h3>
           <hr/>
-          <div id="language-inputs">
-            <label>Languages</label>
-            <ul className='list-group'>
-              {this.renderLanguages()}
-            </ul>
-            <div className='input-group'>
-              <TextInput
-                placeholder="New language"
-                ref={
-                  input => this.languageInput = input
-                }
-              />
-              <span className='input-group-btn'>
-                <Button style="success" id='language' className="plus-button btn-secondary" onClick={this.addLanguageButtonClick}><i className="fa fa-plus"></i></Button>
-              </span>
-            </div>
-          </div>
+          <TextInput label="First Name" placeholder="Seppo"/>
+          <TextInput label="Second Name" placeholder="Makinen"/>
+          <label>Gender</label>
+          <Dropdown type='select' title='Gender' options={['Female','Male','undefined']}/>
+          <TextInput type ="date" label="Date of Birth" placeholder="06.06.1966"/>
+          <TextInput label="Country" placeholder="Ponyland"/>
+          <TextInput label="City" placeholder="Unicorntown"/>
+          <TextInput label="Mother Tongue" placeholder="English"/>
         </div>
         <div className="col-md-6">
           <h3>Discovery settings</h3>
           <hr/>
-          <TextInput label="Games" placeholder="CS:GO"/>
-          <Button style="success" className="plus-button btn-circle"><i className="fa fa-plus"></i></Button>
+            <InputPlusButton example="English" label="Languages"/>
+            <InputPlusButton example="CS:GO" label="Games"/>
           <div className="form-group">
             <label>Who are you looking for ?</label>
             <Dropdown type='select' title='Gender' options={['Female','Male','undefined']}/>
