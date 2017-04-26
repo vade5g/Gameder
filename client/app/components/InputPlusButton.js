@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import TextInput from './TextInput'
+import Button from './Button';
 
 
 export default class InputPlusButton extends Component{
@@ -23,11 +25,20 @@ export default class InputPlusButton extends Component{
     }
     return languages;
   }
-
+  addLanguageButtonClick(ev) {
+    const value = this.languageInput.state.value;
+    if(!value)
+      return;
+    this.props.values.push(
+      value
+    );
+    this.languageInput.state.value = '';
+    this.forceUpdate();
+  }
   render(){
     return(
       <div id="language-inputs">
-        <label>Languages</label>
+        <label>{this.props.label}</label>
         <ul className='list-group'>
           {this.renderLanguages()}
         </ul>
@@ -48,8 +59,9 @@ export default class InputPlusButton extends Component{
 }
 InputPlusButton.defaultProps = {
   values: [
-    this.props.example,
+    'English',
   ],
+
 
 }
 InputPlusButton.propTypes={
