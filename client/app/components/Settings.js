@@ -23,22 +23,18 @@ export default class Settings extends Component {
         <div className="col-md-6">
           <h3>Personal</h3>
           <hr/>
-          <TextInput label="First Name" placeholder="Seppo"/>
-          <TextInput label="Second Name" placeholder="Makinen"/>
+          <TextInput label="Username" placeholder="Seppo55Ponny"/>
+          <TextInput label="Email" type="email" placeholder="ponnyOneLove@vamk.fi"/>
           <label>Gender</label>
           <Dropdown type='select' title='Gender' options={['Female','Male','undefined']}/>
-          <TextInput type ="date" label="Date of Birth" placeholder="06.06.1966"/>
-          <TextInput label="Country" placeholder="Ponyland"/>
-          <TextInput label="City" placeholder="Unicorntown"/>
-          <TextInput label="Mother Tongue" placeholder="English"/>
+          <TextInput type ="date" label="Date of Birth" placeholder="06/06/1966"/>
+          <hr/>
+          <Button type="submit" style="success">Submit</Button>
         </div>
         <div className="col-md-6">
           <h3>Discovery settings</h3>
           <hr/>
-
-            <ListGroupWithInput label="Languages" placeholder="New language" id="languagesList" items={values.languages}/>
             <ListGroupWithInput example="CS:GO" label="Games" placeholder="New game" id="gamesList" items={values.games}/>
-
           <div className="form-group">
             <label>Who are you looking for ?</label>
             <Dropdown type='select' title='Gender' options={['Female','Male','undefined']}/>
@@ -52,6 +48,8 @@ export default class Settings extends Component {
             <TimeInput label="From: " className="form-control"/>
             <TimeInput label="Till: " className="form-control"/>
           </div>
+          <hr/>
+          <Button type="submit" style="success">Submit</Button>
         </div>
       </form>
     );
