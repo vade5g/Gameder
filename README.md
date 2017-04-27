@@ -1,8 +1,4 @@
-
-
-# swedish-meatballs
-my local repository for school project
-Hello
 Gameder
-
+=======
 Tinder for Gamers!
+This is a school project of a group name Swedish-Meatballs.
