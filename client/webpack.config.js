@@ -29,7 +29,7 @@ const commonConfig = (env) => {
     devtool: 'cheap-module-source-map',
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Webpack demo',
+        title: 'Gameder',
         template: 'common/index.ejs'
       }),
       new webpack.HotModuleReplacementPlugin(),

@@ -6,6 +6,7 @@ import TextInput from './components/TextInput';
 import Settings from './components/Settings';
 import Dropdown from './components/Dropdown';
 
+
 const pages = [
   {
     title: 'Discovery',

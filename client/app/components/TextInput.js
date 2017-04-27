@@ -25,9 +25,12 @@ export default class TextInput extends Component{
       value,
       placeholder,
       label,
+      type
     } = this.props;
+
     const input = (
-      <input type="text" className={className} value={this.state.value} onChange={this.onInputChange} placeholder={placeholder}/>
+      <input type={type} className={className} value={this.state.value} onChange={this.onInputChange} placeholder={placeholder}/>
+
     );
 
     if(label)
@@ -47,6 +50,8 @@ TextInput.defaultProps = {
   className: 'form-control',
   value: '',
   placeholder: '',
+  type:'text'
+
 };
 
 TextInput.propTypes = {
@@ -54,4 +59,5 @@ TextInput.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   label: PropTypes.string,
+
 };
