@@ -8,16 +8,16 @@ import Dropdown from './components/Dropdown';
 
 const pages = [
   {
+    title: 'Settings',
+    component: Settings,
+  },
+  {
     title: 'Discovery',
     component: TextInput,
   },
   {
     title: 'Matches',
     component: TextInput,
-  },
-  {
-    title: 'Settings',
-    component: Settings,
   },
 ];
 
