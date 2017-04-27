@@ -6,20 +6,9 @@ import TextInput from './components/TextInput';
 import Settings from './components/Settings';
 import Dropdown from './components/Dropdown';
 
+
 const pages = [
   {
-<<<<<<< HEAD:client/app/MainView.js
-    title: 'Settings',
-    component: Settings,
-  },
-  {
-    title: 'Discovery',
-    component: TextInput,
-  },
-  {
-    title: 'Matches',
-    component: TextInput,
-=======
     title: 'Discovery',
     component: TextInput,
   },
@@ -30,7 +19,6 @@ const pages = [
   {
     title: 'Settings',
     component: Settings,
->>>>>>> 5279a510cf30440a77135d3ba1c4b6daa7153f80:client/app/MainView.js
   },
 ];
 
