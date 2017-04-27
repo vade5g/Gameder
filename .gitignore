@@ -3,6 +3,7 @@ build/
 .DS_Store
 .idea/
 .eslintcache
+
 target/
 *.iml
 pom.xml.tag

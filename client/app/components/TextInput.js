@@ -30,6 +30,7 @@ export default class TextInput extends Component{
 
     const input = (
       <input type={type} className={className} value={this.state.value} onChange={this.onInputChange} placeholder={placeholder}/>
+
     );
 
     if(label)
@@ -50,6 +51,7 @@ TextInput.defaultProps = {
   value: '',
   placeholder: '',
   type:'text'
+
 };
 
 TextInput.propTypes = {
@@ -57,5 +59,5 @@ TextInput.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   label: PropTypes.string,
-  //type: PropTypes.date
+
 };

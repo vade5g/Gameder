@@ -8,6 +8,7 @@ import Dropdown from './components/Dropdown';
 
 const pages = [
   {
+<<<<<<< HEAD:client/app/MainView.js
     title: 'Settings',
     component: Settings,
   },
@@ -18,6 +19,18 @@ const pages = [
   {
     title: 'Matches',
     component: TextInput,
+=======
+    title: 'Discovery',
+    component: TextInput,
+  },
+  {
+    title: 'Matches',
+    component: TextInput,
+  },
+  {
+    title: 'Settings',
+    component: Settings,
+>>>>>>> 5279a510cf30440a77135d3ba1c4b6daa7153f80:client/app/MainView.js
   },
 ];
 

@@ -4,6 +4,7 @@ import TextInput from './TextInput';
 import Button from './Button';
 import Dropdown from './Dropdown';
 import TimeInput from './TimeInput';
+<<<<<<< HEAD
 import ListGroupWithInput from './ListGroup/ListGroupWithInput';
 
 const values = {
@@ -16,6 +17,7 @@ const values = {
 };
 
 export default class Settings extends Component {
+
   render() {
     return (
       <form className="row">
@@ -34,8 +36,10 @@ export default class Settings extends Component {
         <div className="col-md-6">
           <h3>Discovery settings</h3>
           <hr/>
+
             <ListGroupWithInput label="Languages" placeholder="New language" id="languagesList" items={values.languages}/>
             <ListGroupWithInput example="CS:GO" label="Games" placeholder="New game" id="gamesList" items={values.games}/>
+
           <div className="form-group">
             <label>Who are you looking for ?</label>
             <Dropdown type='select' title='Gender' options={['Female','Male','undefined']}/>
