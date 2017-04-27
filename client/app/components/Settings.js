@@ -4,7 +4,6 @@ import TextInput from './TextInput';
 import Button from './Button';
 import Dropdown from './Dropdown';
 import TimeInput from './TimeInput';
-<<<<<<< HEAD
 import ListGroupWithInput from './ListGroup/ListGroupWithInput';
 
 const values = {
