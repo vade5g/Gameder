@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TextInput from '../TextInput';
 import ListGroup from './ListGroup';
 import Button from '../Button';
+import Dropdown from '../Dropdown';
 
 
 export default class ListGroupWithInput extends Component{
@@ -17,11 +18,12 @@ export default class ListGroupWithInput extends Component{
   }
 
   addListItemButtonClick(ev) {
-    const value = this.languageInput.state.value;
+    const value = this.languageInput.state.title;
+
     if(!value)
       return;
     this.setState({
-      items: this.state.items.concat(value),
+      items: this.state.items.concat(ev.target.text),
     });
     this.languageInput.state.value = '';
   }
@@ -52,15 +54,7 @@ export default class ListGroupWithInput extends Component{
         <label>{label}</label>
         <ListGroup items={this.state.items} itemIcon={itemIcon} id={id}/>
         <div className='input-group'>
-          <TextInput
-            placeholder={placeholder}
-            ref={
-              input => this.languageInput = input
-            }
-          />
-          <span className='input-group-btn'>
-            <Button style="success" id='language' className="plus-button btn-secondary" onClick={this.addListItemButtonClick}><i className="fa fa-plus"></i></Button>
-          </span>
+          <Dropdown onClick={this.addListItemButtonClick} type="select-push" title={label} ref={input => this.languageInput = input} options={['CS:GO','My Little Pony','World Of Warcraft','League Of Legends','Dota 2']}/>
         </div>
       </div>
     );

@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/js/bootstrap.min';
+import 'bootstrap-slider/dist/bootstrap-slider.js';
 
 
 const app = document.createElement('div');
