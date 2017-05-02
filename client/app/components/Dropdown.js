@@ -17,6 +17,9 @@ export default class Dropdown extends Component{
     this.setState({title:ev.target.text});
   }
 
+
+
+
   renderOptions(){
     const list = [];
     let onclick;
@@ -24,7 +27,9 @@ export default class Dropdown extends Component{
     for(let li of this.props.options){
       if(this.props.type=='select'){
         onclick = this.changeTitle;
-        list.push(<li key={li} onClick={onclick}><a href="#">{li}</a></li>)
+        list.push(<li key={li} onClick={onclick} ><a href="#">{li}</a></li>)
+      }else if(this.props.type=='select-push'){
+        list.push(<li key={li} onClick={this.props.onClick} ><a href="#">{li}</a></li>)
       }else if(this.props.type=='checkboxes'){
         list.push(<li key={li}><a href='#'>
           <div className="checkbox">
@@ -63,5 +68,6 @@ Dropdown.propTypes={
   className:PropTypes.string,
   title:PropTypes.string,
   type:PropTypes.string,
-  options:PropTypes.array
+  options:PropTypes.array,
+  onClick:PropTypes.func,
 }

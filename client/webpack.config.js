@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ROOT = __dirname;
@@ -8,12 +9,14 @@ const PATHS = {
   root: ROOT,
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build'),
+  assets: path.join(ROOT, 'assets')
 };
 
 const FILE_MATCHERS = {
   JS: /\.jsx?$/,
   CSS: /\.css$/,
-  FONTS: /\.(eot|svg|ttf|woff|woff2)$/
+  FONTS: /\.(eot|svg|ttf|woff|woff2)$/,
+  IMAGES: /\.jpe?g$/
 };
 
 const commonConfig = (env) => {
@@ -24,7 +27,7 @@ const commonConfig = (env) => {
     output: {
       path: PATHS.build,
       devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]',
-      filename: '[name].js',
+      filename: '[name].[ext]',
     },
     devtool: 'cheap-module-source-map',
     plugins: [
@@ -38,7 +41,13 @@ const commonConfig = (env) => {
         jQuery: 'jquery',
         $: 'jquery',
         jquery: 'jquery'
-      })
+      }),
+      // new CopyWebpackPlugin([
+      //   {
+      //     from: 'assets/',
+      //     to: 'assets/'
+      //   }
+      // ]),
     ],
     resolve: {
       extensions: ['.js', '.jsx'],
@@ -74,6 +83,10 @@ const commonConfig = (env) => {
         {
           test: FILE_MATCHERS.FONTS,
           loader: 'file-loader',
+        },
+        {
+          test: FILE_MATCHERS.IMAGES,
+          loader: 'url-loader'
         }
       ],
     },

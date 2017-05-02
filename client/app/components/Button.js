@@ -32,7 +32,7 @@ export default class Button extends Component{
   render(){
     const props = this.props;
     return(
-      <button className={`${props.className} ${this.getStyle()}`} onClick={this.onClick}>{props.children}</button>
+      <button className={`${props.className} ${this.getStyle()}`} onClick={this.onClick} type={props.type}>{props.children}</button>
     );
   }
 }
@@ -54,5 +54,5 @@ Button.propTypes = {
   onHover: PropTypes.func,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
-
+  type:PropTypes.string,
 };
