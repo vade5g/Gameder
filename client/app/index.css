@@ -2,15 +2,20 @@
   text-align: center;
 }
 
+.nav-tabs{
+  padding-bottom: 50px;
+}
+
 .btn-circle {
   margin-top: 7px;
-  width: 30px;
-  height: 30px;
+  width: 70px;
+  height: 70px;
   text-align: center;
   padding: 6px 0;
   font-size: 12px;
   line-height: 1.42;
-  border-radius: 14px;
+  border-radius: 34px;
+  margin:15px;
 }
 /*.tabs{*/
   /*margin-bottom: 15px;*/
