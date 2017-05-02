@@ -8,7 +8,7 @@ import './index.css';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap-slider/dist/bootstrap-slider.js';
-import ReactBootstrapSlider from 'react-bootstrap-slider';
+
 
 const app = document.createElement('div');
 document.body.appendChild(app);
