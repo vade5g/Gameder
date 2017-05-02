@@ -1,9 +1,9 @@
-package com.gameder.app.handlers.gamers;
+package com.gameder.app.handlers.profiles;
 
-public class Gamer {
+public class Profile {
     private final long id;
 
-    public Gamer() {
+    public Profile() {
         this.id = 1;
     }
 
