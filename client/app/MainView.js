@@ -5,7 +5,8 @@ import Header from './components/Header';
 import TextInput from './components/TextInput';
 import Settings from './components/Settings';
 import Dropdown from './components/Dropdown';
-
+import RangeSlider from './components/RangeSlider';
+import ReactBootstrapSlider from 'react-bootstrap-slider';
 
 const pages = [
   {
