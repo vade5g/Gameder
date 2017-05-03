@@ -41,7 +41,6 @@ export default class Discovery extends Component{
 
   render(){
     let user=this.randomUser();
-    console.log(user)
     return(
       <div>
         <UserView user={user} onSuccessClick={this.clickSuccess} onDenyClick={this.clickDeny}/>
