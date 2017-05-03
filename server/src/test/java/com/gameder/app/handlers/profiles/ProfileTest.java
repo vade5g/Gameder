@@ -4,8 +4,8 @@ import org.junit.*;
 
 public class ProfileTest {
     @Test
-    public void ProfileIdShouldBeValid() {
-        Assert.assertEquals(new Profile().getName(), "A Little Pony");
+    public void ProfileNameShouldBeValid() {
+        Assert.assertEquals(new Profile("A Little Pony", "imgUrl").getName(), "A Little Pony");
     }
 
 
