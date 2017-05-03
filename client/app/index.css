@@ -17,6 +17,15 @@
   border-radius: 34px;
   margin:15px;
 }
+.img-view {
+    height: 540px;
+    /*width: 400px;*/
+    overflow: hidden;
+}
+.img-view img {
+    height: 100%;
+    width: auto;
+}
 /*.tabs{*/
   /*margin-bottom: 15px;*/
 /*}*/
