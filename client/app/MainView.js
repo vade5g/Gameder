@@ -7,7 +7,7 @@ import Settings from './components/Settings';
 import Dropdown from './components/Dropdown';
 import RangeSlider from './components/RangeSlider';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
-import Discovery from './components/Discovery'
+import Discovery from './components/Discovery';
 
 const pages = [
   {

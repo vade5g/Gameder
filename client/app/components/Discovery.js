@@ -1,28 +1,40 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import UserView from './UserView';
 import Button from './Button';
 
-const profiles=[{username:'johnsnow',image:'none',},{username:'cersei',image:'none'}]
+// does not look good though
+let profiles = {};
 
-export default class Discovery extends Component{
+export default class Discovery extends Component {
   constructor(props){
     super(props);
     this.state = {
-      currentUser: this.randomUser(),
+      currentUser: {},
     };
     this.clickSuccess = this.clickSuccess.bind(this);
     this.clickDeny = this.clickDeny.bind(this);
   }
 
-  randomUser() {
+  componentDidMount() {
+    axios.get('http://localhost:8080/api/profiles')
+      .then(res => {
+        profiles = res.data;
+        this.setState({
+          currentUser: this.getRandomUser(),
+        });
+      });
+  }
+
+  getRandomUser() {
     let i = Math.floor(Math.random()*((profiles.length-1)-0+1)+0);
     if(!this.state)
       return profiles[i];
 
     return profiles[i] !== this.state.currentUser
       ? profiles[i]
-      : this.randomUser();
+      : this.getRandomUser();
   }
 
   clickSuccess(){
@@ -35,15 +47,14 @@ export default class Discovery extends Component{
 
   newUser(){
     this.setState({
-      currentUser: this.randomUser()
-    })
+      currentUser: this.getRandomUser(),
+    });
   }
 
   render(){
-    let user=this.randomUser();
     return(
       <div>
-        <UserView user={user} onSuccessClick={this.clickSuccess} onDenyClick={this.clickDeny}/>
+        <UserView user={this.state.currentUser} onSuccessClick={this.clickSuccess} onDenyClick={this.clickDeny}/>
       </div>
     );
   }
