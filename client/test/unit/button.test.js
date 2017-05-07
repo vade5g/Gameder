@@ -23,4 +23,23 @@ describe('Button', function(){
       expect(this.button.props().className).to.include('btn-default');
     });
   });
+  describe('button with success style',function(){
+    before(function(){
+      this.wrapper = shallow(
+        <Button style="success">
+          Test
+        </Button>
+      );
+      this.button = this.wrapper.find('button');
+    });
+
+    it('renders a button', function(){
+      expect(this.button).to.have.length(1);
+    });
+
+    it('button has a success style class ', function() {
+      expect(this.button.props().className).to.include('btn-success');
+    });
+
+  });
 });
