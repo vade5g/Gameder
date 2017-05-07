@@ -17,7 +17,7 @@ class UserView extends Component {
           <img src={`${img}`} className="img-rounded img-responsive center-block" alt="Cinque Terre"/>
         </div>
         <div className="center">
-        <h3>{`Username: ${name}`}</h3>
+        <h3 className="username">{`Username: ${name}`}</h3>
           <Button className='btn-circle no' style="danger" onClick={this.props.onDenyClick}>No</Button>
           <Button className='btn-circle yes' style="success" onClick={this.props.onSuccessClick}>Yes</Button>
         </div>

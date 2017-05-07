@@ -7,7 +7,8 @@
     "lint:js": "eslint app/ webpack.*.js --cache",
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "build": "webpack --env production",
-    "test": "karma start"
+    "test": "karma start",
+    "setup-test": "./node_modules/.bin/selenium-standalone install && selenium-standalone start"
   },
   "keywords": [],
   "author": "",
@@ -35,7 +36,10 @@
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
+    "selenium-standalone": "^6.4.1",
     "url-loader": "^0.5.8",
+    "wdio-jasmine-framework": "^0.3.1",
+    "webdriverio": "^4.8.0",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2",
     "webpack-merge": "^4.1.0"
