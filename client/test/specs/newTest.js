@@ -1,18 +1,17 @@
-describe('Login form tests', function() {
+describe('Discovery page tests', function() {
   beforeAll(function(done) {
     browser
       .url('/')
       .windowHandleSize({ width: 1200, height: 800 })
       .call(done);
   });
-  describe('When a user does not enter a username and password', function() {
-    it('should display an error message', function(done) {
+  describe('"Gameder"logo appears in the top', function() {
+    it('should display an Gameder', function(done) {
       browser
-        .click('.yes')
-        .waitForExist('.username');
+        .waitForExist('.logo');
 
-      expect(browser.getText('.username'))
-        .toBe('Username:');
+      expect(browser.getText('.logo'))
+        .toBe('Gameder');
 
       browser.call(done);
     });

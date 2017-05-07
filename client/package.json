@@ -7,6 +7,7 @@
     "lint:js": "eslint app/ webpack.*.js --cache",
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "build": "webpack --env production",
+    "browser-test": "./node_modules/.bin/wdio wdio.conf.js",
     "test": "karma start",
     "setup-test": "./node_modules/.bin/selenium-standalone install && selenium-standalone start"
   },
