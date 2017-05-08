@@ -40,6 +40,23 @@ describe('Button', function(){
     it('button has a success style class ', function() {
       expect(this.button.props().className).to.include('btn-success');
     });
+  });
+  describe('button with danger style',function(){
+    before(function(){
+      this.wrapper = shallow(
+        <Button style="danger">
+          Test
+        </Button>
+      );
+      this.button = this.wrapper.find('button');
+    });
 
+    it('renders a button', function(){
+      expect(this.button).to.have.length(1);
+    });
+
+    it('button has a danger style class ', function() {
+      expect(this.button.props().className).to.include('btn-danger');
+    });
   });
 });
